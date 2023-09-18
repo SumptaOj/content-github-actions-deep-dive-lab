@@ -1,15 +1,15 @@
-name: Deploy feature braches to nonproduction bucket
+name: Deploy site to production
 
 on:
     push:
         branches:
-            - feature*
+            - main
 
 jobs:
     build:
         runs-on: ubuntu-latest
         env:
-            BUCKET_NAME: my-github-nonprod-bucket
+            BUCKET_NAME: my-github-prod-bucket
         steps:
             - name: checkout code
               uses: actions/checkout@v2
